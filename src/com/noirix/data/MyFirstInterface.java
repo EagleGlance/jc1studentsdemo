@@ -8,6 +8,10 @@ public interface MyFirstInterface {
     * */
     public abstract void someMethod();
 
+    public abstract void someMethod(String someString, int a);
+
+    public abstract void someMethod(int a);
+
     default void functionality() {
         System.out.println("In default method in interface");
     }

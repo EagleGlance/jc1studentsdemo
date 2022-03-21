@@ -1,6 +1,11 @@
 package com.noirix.data;
 
+import com.noirix.util.DataUtil;
 import com.noirix.util.TestJavaUtil;
+
+import java.util.Arrays;
+
+import static com.noirix.util.DataUtil.showData;
 
 public class Test {
     public static void main(String ... args) {
@@ -54,6 +59,15 @@ public class Test {
 
         MySecondInterface data4 = new Data();
         data4.someTextFunctionality("ASDFGHJKL");
+
+        Data[] dataArray = DataUtil.generateData(10);
+        System.out.println("Before sorting");
+        showData(dataArray);
+        //Necessary to implements Comparable, Comparator will be used in Collections API
+        Arrays.sort(dataArray);
+
+        System.out.println("After sorting");
+        showData(dataArray);
 
     }
 }

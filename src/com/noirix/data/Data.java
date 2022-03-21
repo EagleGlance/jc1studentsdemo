@@ -1,6 +1,8 @@
 package com.noirix.data;
 
-public class Data implements MyFirstInterface, MySecondInterface {
+import java.util.Comparator;
+
+public class Data implements MyFirstInterface, MySecondInterface, Comparator<Data> {
 
     public static final String SOME_CONSTANT_STRING;
     public static int commonValue = 777;
@@ -29,6 +31,10 @@ public class Data implements MyFirstInterface, MySecondInterface {
 
     public Data() {
         System.out.println("In default Constructor");
+    }
+
+    public Data(int value) {
+        this.value = value;
     }
 
     public Data(int value, String text) {
@@ -99,6 +105,11 @@ public class Data implements MyFirstInterface, MySecondInterface {
     //Overriding = full equality of methods signatures + extends
 
 
+    @Override
+    public int compare(Data o1, Data o2) {
+        return Integer.compare(o2.getValue(), o1.getValue());
+    }
+
     //1. Collections API
     //2. Сравнение объектов
     @Override
@@ -136,11 +147,26 @@ public class Data implements MyFirstInterface, MySecondInterface {
 
     @Override
     public void someMethod() {
-        System.out.println("Some overrided logic in Data class");
+        someMethod("DEFAULT string", 10);
+    }
+
+    @Override
+    public void someMethod(String someString, int a) {
+        System.out.println(someString.toLowerCase() + a);
+    }
+
+    @Override
+    public void someMethod(int a) {
+        someMethod("Default String", a);
     }
 
     @Override
     public String someTextFunctionality(String txt) {
         return txt.toLowerCase();
     }
+
+//    @Override
+//    public int compareTo(Data o) {
+//        return this.value - o.getValue();
+//    }
 }
