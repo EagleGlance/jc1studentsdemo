@@ -3,6 +3,7 @@ package com.noirix.domain;
 public class Computer extends HumanMadeObject {
 
     private int ram;
+    private Connectors connectors = Connectors.USB_3_0;
 
     public Computer() {
         System.out.println("In Computer Constructor");
@@ -12,6 +13,22 @@ public class Computer extends HumanMadeObject {
         super(weight, someParam);
         this.ram = ram;
         System.out.println("In Computer Constructor with params");
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public void setRam(int ram) {
+        this.ram = ram;
+    }
+
+    public Connectors getConnectors() {
+        return connectors;
+    }
+
+    public void setConnectors(Connectors connectors) {
+        this.connectors = connectors;
     }
 
     @Override
@@ -32,23 +49,23 @@ public class Computer extends HumanMadeObject {
 
         Computer computer = (Computer) o;
 
-        return ram == computer.ram;
+        if (ram != computer.ram) return false;
+        return connectors == computer.connectors;
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
         result = 31 * result + ram;
+        result = 31 * result + (connectors != null ? connectors.hashCode() : 0);
         return result;
     }
-
 
     @Override
     public String toString() {
         return "Computer{" +
                 "ram=" + ram +
-                ", someParam='" + someParam + '\'' +
-                ", weight=" + weight +
+                ", connectors=" + connectors +
                 "} " + super.toString();
     }
 }
