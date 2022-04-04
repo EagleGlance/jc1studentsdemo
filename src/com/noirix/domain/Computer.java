@@ -1,18 +1,20 @@
 package com.noirix.domain;
 
-public class Computer extends HumanMadeObject {
+import java.util.Comparator;
+
+public class Computer extends HumanMadeObject implements Comparator<Computer> {
 
     private int ram;
     private Connectors connectors = Connectors.USB_3_0;
 
     public Computer() {
-        System.out.println("In Computer Constructor");
+        //System.out.println("In Computer Constructor");
     }
 
     public Computer(double weight, String someParam, int ram) {
         super(weight, someParam);
         this.ram = ram;
-        System.out.println("In Computer Constructor with params");
+        //System.out.println("In Computer Constructor with params");
     }
 
     public int getRam() {
@@ -39,6 +41,11 @@ public class Computer extends HumanMadeObject {
     @Override
     public void parentBehaviour() {
         System.out.println("Inside parentBehaviour computer");
+    }
+
+    @Override
+    public int compare(Computer o1, Computer o2) {
+        return Integer.compare(o1.getRam(), o2.getRam());
     }
 
     @Override

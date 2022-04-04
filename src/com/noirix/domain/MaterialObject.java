@@ -4,12 +4,12 @@ public abstract class MaterialObject {
     protected double weight;
 
     public MaterialObject() {
-        System.out.println("In MaterialObject Constructor");
+        //System.out.println("In MaterialObject Constructor");
     }
 
     public MaterialObject(double weight) {
         this.weight = weight;
-        System.out.println("In MaterialObject Constructor with params");
+        //System.out.println("In MaterialObject Constructor with params");
     }
 
     public double getWeight() {

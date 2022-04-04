@@ -8,7 +8,7 @@ public abstract class HumanMadeObject extends MaterialObject implements Cloneabl
     public HumanMadeObject() {
         weight = 10;
         someParam = "aasdasd";
-        System.out.println("In HumanMadeObject Constructor");
+        //System.out.println("In HumanMadeObject Constructor");
     }
 
     public HumanMadeObject(double weight, String someParam) {
@@ -16,7 +16,7 @@ public abstract class HumanMadeObject extends MaterialObject implements Cloneabl
 
         this.someParam = someParam;
 
-        System.out.println("In HumanMadeObject Constructor with params");
+        //System.out.println("In HumanMadeObject Constructor with params");
     }
 
     @Override
