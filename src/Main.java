@@ -31,7 +31,6 @@ public class Main {
         System.out.println("It takes " + result + " ms");
 
 
-
         CollectionUtils.getListStats(objects);
         CollectionUtils.getListStats(linkedList);
 

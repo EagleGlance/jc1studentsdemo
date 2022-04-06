@@ -86,13 +86,5 @@ public class CollectionsTests {
         for (Computer setComputer : setComputers) {
             System.out.println(setComputer);
         }
-
-        try {
-
-        } catch(Exception e) {
-            System.out.println("Exception processing");
-        } finally {
-            System.out.println("Finally!");
-        }
     }
 }

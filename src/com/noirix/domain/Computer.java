@@ -4,11 +4,20 @@ import java.util.Comparator;
 
 public class Computer extends HumanMadeObject implements Comparator<Computer> {
 
+    /*Lowest volume of RAM for computers in our system*/
+    private static final int DEFAULT_RAM = 8;
+
+    private static final Connectors DEFAULT_CONNECTOR = Connectors.USB_3_0;
+
     private int ram;
-    private Connectors connectors = Connectors.USB_3_0;
+    private Connectors connectors;
 
     public Computer() {
         //System.out.println("In Computer Constructor");
+        ram = DEFAULT_RAM;
+        connectors = DEFAULT_CONNECTOR;
+
+        throw new RuntimeException();
     }
 
     public Computer(double weight, String someParam, int ram) {
@@ -33,9 +42,16 @@ public class Computer extends HumanMadeObject implements Comparator<Computer> {
         this.connectors = connectors;
     }
 
+    /*
+     * throws RuntimeException if we call this method
+     * */
     @Override
+    //@Deprecated
     public void someBehaviour() {
+
         System.out.println("Inside someBehaviour computer");
+        throw new RuntimeException(); //analog some code with problems
+
     }
 
     @Override
