@@ -5,7 +5,7 @@ public class TestClicker {
         Clicker clicker = new Clicker();
         clicker.start();
 
-        Thread.sleep(50);
+        //Thread.sleep(50);
 
         clicker.stopClicking();
         clicker.join();

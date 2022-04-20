@@ -2,7 +2,7 @@ package com.noirix.concurrency;
 
 public class Clicker extends Thread {
     private int click = 0;
-    private boolean isRunning = true;
+    private volatile boolean isRunning = true;
 
     @Override
     public void run() {

@@ -5,6 +5,9 @@ import com.noirix.domain.Computer;
 public class ExceptionTests {
     public static void main(String[] args) {
 
+        String s = "slava".intern();
+
+
         Computer comp = null;
         try {
             comp = new Computer();
