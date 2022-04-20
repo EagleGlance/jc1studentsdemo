@@ -6,6 +6,8 @@ import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringTest {
 
@@ -46,6 +48,13 @@ public class StringTest {
         System.out.println(LocalizedMessageProvider.getMessage("title", testLocale.getLanguage(), testLocale.getCountry()));
         System.out.println(LocalizedMessageProvider.getMessage("country", testLocale.getLanguage(), testLocale.getCountry()));
         System.out.println(LocalizedMessageProvider.getMessage("city", testLocale.getLanguage(), testLocale.getCountry()));
+
+        Pattern pattern = Pattern.compile("[a-zA-Z ]{2,3}");
+        Matcher someText = pattern.matcher("5555Someghjkjhghjk text 777  8888 ");
+
+        while (someText.find()) {
+            System.out.println(someText.group());
+        }
     }
 }
 
