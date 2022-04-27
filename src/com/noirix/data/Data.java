@@ -1,8 +1,11 @@
 package com.noirix.data;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
-public class Data implements MyFirstInterface, MySecondInterface, Comparator<Data> {
+public class Data implements MyFirstInterface, MySecondInterface, Comparator<Data>, Serializable {
+
+    private static final long serialVersionUID = 2L;
 
     public static final String SOME_CONSTANT_STRING;
     public static int commonValue = 777;
