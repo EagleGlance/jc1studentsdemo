@@ -1,8 +1,11 @@
 package com.noirix.data;
 
+import com.noirix.reflection.CustomAnnotation;
+
 import java.io.Serializable;
 import java.util.Comparator;
 
+@CustomAnnotation
 public class Data implements MyFirstInterface, MySecondInterface, Comparator<Data>, Serializable {
 
     private static final long serialVersionUID = 2L;
@@ -13,6 +16,7 @@ public class Data implements MyFirstInterface, MySecondInterface, Comparator<Dat
     /*Ctrl+Alt+O - imports optimization*/
     /*Ctrl+Alt+L - code formatting according installed formatter in IDE*/
     /*Default constructor*/
+    @CustomAnnotation
     private int value = 10;
     private String text = "default text";
 
@@ -69,6 +73,7 @@ public class Data implements MyFirstInterface, MySecondInterface, Comparator<Dat
 
 
     /*Overloading*/
+    @CustomAnnotation
     public int someLogicWithoutParams() {
         return 0;
     }

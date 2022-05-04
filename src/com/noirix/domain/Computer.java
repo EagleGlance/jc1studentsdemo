@@ -1,5 +1,8 @@
 package com.noirix.domain;
 
+import com.noirix.reflection.CustomAnnotation;
+import com.noirix.reflection.NotNullCustomAnnotation;
+
 import java.util.Comparator;
 
 public class Computer extends HumanMadeObject implements Comparator<Computer> {
@@ -9,15 +12,17 @@ public class Computer extends HumanMadeObject implements Comparator<Computer> {
 
     private static final Connectors DEFAULT_CONNECTOR = Connectors.USB_3_0;
 
+    @NotNullCustomAnnotation
+    @CustomAnnotation
     private int ram;
+    @NotNullCustomAnnotation
+    @CustomAnnotation
     private Connectors connectors;
 
     public Computer() {
         //System.out.println("In Computer Constructor");
         ram = DEFAULT_RAM;
         connectors = DEFAULT_CONNECTOR;
-
-        throw new RuntimeException();
     }
 
     public Computer(double weight, String someParam, int ram) {
@@ -31,6 +36,7 @@ public class Computer extends HumanMadeObject implements Comparator<Computer> {
     }
 
     public void setRam(int ram) {
+        System.out.println("inside setRam method");
         this.ram = ram;
     }
 
@@ -46,7 +52,7 @@ public class Computer extends HumanMadeObject implements Comparator<Computer> {
      * throws RuntimeException if we call this method
      * */
     @Override
-    //@Deprecated
+    @Deprecated
     public void someBehaviour() {
 
         System.out.println("Inside someBehaviour computer");
